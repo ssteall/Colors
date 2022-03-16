@@ -20,28 +20,52 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        currentColorView.layer.cornerRadius = 20
-            
-        viewSutups()
-        sliderSetups()
-        labelsSetups()
         
+        setColorViewSetups()
+        setViewSutups()
+        setSlidersSetups()
+        setLabel()
         setColor()
     }
 
     
     @IBAction func redSliderChanged() {
         setColor()
-        redColorLabel.text = String(round(redColorSlider.value * 100) / 100)
+        setLabel()
     }
     
     @IBAction func greenSliderChanged() {
         setColor()
-        greenColorLabel.text = String(round(greenColorSlider.value * 100) / 100)
+        setLabel()
     }
     
     @IBAction func blueSliderChanged() {
         setColor()
+        setLabel()
+    }
+        
+    private func setViewSutups() { // цвет взят с видео для идентичности :)
+        view.backgroundColor = UIColor(
+            red: 39/255,
+            green: 88/255,
+            blue: 158/255,
+            alpha: 1
+        )
+    }
+    
+    private func setColorViewSetups() {
+        currentColorView.layer.cornerRadius = 20
+    }
+    
+    private func setSlidersSetups() {
+        redColorSlider.value = Float.random(in: 0...1)
+        greenColorSlider.value = Float.random(in: 0...1)
+        blueColorSlider.value = Float.random(in: 0...1)
+    }
+    
+    private func setLabel(){
+        redColorLabel.text = String(round(redColorSlider.value * 100) / 100)
+        greenColorLabel.text = String(round(greenColorSlider.value * 100) / 100)
         blueColorLabel.text = String(round(blueColorSlider.value * 100) / 100)
     }
     
@@ -53,26 +77,4 @@ class ViewController: UIViewController {
             alpha: 1
         )
     }
-    
-    private func viewSutups() { // цвет взят с видео для идентичности :)
-        view.backgroundColor = UIColor(
-            red: 39/255,
-            green: 88/255,
-            blue: 158/255,
-            alpha: 1
-        )
-    }
-    
-    private func sliderSetups() {
-        redColorSlider.value = Float.random(in: 0...1)
-        greenColorSlider.value = Float.random(in: 0...1)
-        blueColorSlider.value = Float.random(in: 0...1)
-    }
-    
-    private func labelsSetups(){
-        redColorLabel.text = String(round(redColorSlider.value * 100) / 100)
-        greenColorLabel.text = String(round(greenColorSlider.value * 100) / 100)
-        blueColorLabel.text = String(round(blueColorSlider.value * 100) / 100)
-    }
 }
-
