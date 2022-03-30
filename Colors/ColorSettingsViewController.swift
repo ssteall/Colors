@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ColorSettingsViewController.swift
 //  Colors
 //
 //  Created by Дмитрий Мирошников on 16.03.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ColorSettingsViewController: UIViewController {
 
     @IBOutlet var currentColorView: UIView!
     @IBOutlet var redColorLabel: UILabel!
@@ -18,11 +18,17 @@ class ViewController: UIViewController {
     @IBOutlet var greenColorSlider: UISlider!
     @IBOutlet var blueColorSlider: UISlider!
     
+    @IBOutlet var redColorTextField: UITextField!
+    @IBOutlet var greenColorTextField: UITextField!
+    @IBOutlet var blueColorTextField: UITextField!
+    
+    var color: UIColor!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setColorViewSetups()
-        setViewSutups()
+        setViewSetups()
         setSlidersSetups()
         setLabel()
         setColor()
@@ -44,7 +50,7 @@ class ViewController: UIViewController {
         setLabel()
     }
         
-    private func setViewSutups() { // цвет взят с видео для идентичности :)
+    private func setViewSetups() { // цвет взят с видео для идентичности :)
         view.backgroundColor = UIColor(
             red: 39/255,
             green: 88/255,
