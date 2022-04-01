@@ -7,12 +7,16 @@
 
 import UIKit
 
+protocol ColorSettingsViewControllerDelegate {
+    func setNewColor(for color: UIColor)
+}
+
 class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: CGFloat.random(in: 0...1), green: CGFloat.random(in: 0...1), blue: CGFloat.random(in: 0...1), alpha: 1)
-        navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
+        navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance // вот эта штука исключительно для идентичности с видео, на сколько я понял, такой стиль навигейшн бара уже не используется с в последних версиях свифта
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -21,11 +25,6 @@ class MainViewController: UIViewController {
         colorSettingsVC.color = CIColor(color: backgroundColor)
         colorSettingsVC.delegate = self
     }
-    
-}
-
-protocol ColorSettingsViewControllerDelegate {
-    func setNewColor(for color: UIColor)
 }
 
 extension MainViewController: ColorSettingsViewControllerDelegate {
