@@ -10,6 +10,7 @@ import UIKit
 class ColorSettingsViewController: UIViewController {
 
     @IBOutlet var currentColorView: UIView!
+    
     @IBOutlet var redColorLabel: UILabel!
     @IBOutlet var greenColorLabel: UILabel!
     @IBOutlet var blueColorLabel: UILabel!
@@ -36,13 +37,8 @@ class ColorSettingsViewController: UIViewController {
         blueColorTextField.delegate = self
         
         currentColorView.layer.cornerRadius = 20
-        view.backgroundColor = UIColor(
-            red: 39/255,
-            green: 88/255,
-            blue: 158/255,
-            alpha: 1
-        )
         
+        setViewProperties()
         setSliderValues()
         setLabelValues()
         setTextFieldValues()
@@ -79,6 +75,15 @@ class ColorSettingsViewController: UIViewController {
                                           blue: CGFloat(blueColorSlider.value),
                                           alpha: 1))
         dismiss(animated: true)
+    }
+    
+    private func setViewProperties() {
+        view.backgroundColor = UIColor(
+            red: 39/255,
+            green: 88/255,
+            blue: 158/255,
+            alpha: 1
+        )
     }
     
     private func setSliderValues() {
@@ -132,7 +137,6 @@ class ColorSettingsViewController: UIViewController {
         self.present(alert, animated: true)
     }
         
-    
     @objc func doneClicked() {
         view.endEditing(true)
     }
@@ -147,7 +151,7 @@ extension ColorSettingsViewController: UITextFieldDelegate {
             return
         }
         
-        if (floatColorValue) > 1 {
+        if floatColorValue > 1 {
             textField.text = textFieldValueBeforeChange
             showAlert(title: "Error", massage: "Value must be filled by numbers in range 0...1")
         } else if textField == redColorTextField {
