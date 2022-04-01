@@ -13,6 +13,7 @@
 		BCCF2B1427E274860031A449 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCCF2B1227E274860031A449 /* Main.storyboard */; };
 		BCCF2B1627E274860031A449 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCCF2B1527E274860031A449 /* Assets.xcassets */; };
 		BCCF2B1927E274860031A449 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCCF2B1727E274860031A449 /* LaunchScreen.storyboard */; };
+		BCCF2BBB27F5084D0031A449 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCF2BBA27F5084D0031A449 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		BCCF2B1527E274860031A449 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BCCF2B1827E274860031A449 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BCCF2B1A27E274860031A449 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCCF2BBA27F5084D0031A449 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				BCCF2B0C27E274860031A449 /* AppDelegate.swift */,
 				BCCF2B0E27E274860031A449 /* SceneDelegate.swift */,
 				BCCF2B1027E274860031A449 /* ColorSettingsViewController.swift */,
+				BCCF2BBA27F5084D0031A449 /* MainViewController.swift */,
 				BCCF2B1227E274860031A449 /* Main.storyboard */,
 				BCCF2B1527E274860031A449 /* Assets.xcassets */,
 				BCCF2B1727E274860031A449 /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 				BCCF2B1127E274860031A449 /* ColorSettingsViewController.swift in Sources */,
 				BCCF2B0D27E274860031A449 /* AppDelegate.swift in Sources */,
 				BCCF2B0F27E274860031A449 /* SceneDelegate.swift in Sources */,
+				BCCF2BBB27F5084D0031A449 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
