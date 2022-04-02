@@ -25,9 +25,8 @@ class ColorSettingsViewController: UIViewController {
     
     var color: CIColor!
     var delegate: ColorSettingsViewControllerDelegate!
-    var textFieldValueBeforeChange: String!
     
-    let toolbar = UIToolbar()
+    private var textFieldValueBeforeChange: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +46,7 @@ class ColorSettingsViewController: UIViewController {
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
         view.endEditing(true)
     }
     
@@ -70,10 +70,7 @@ class ColorSettingsViewController: UIViewController {
     
     @IBAction func doneButtonPressed() {
         view.endEditing(true)
-        delegate.setNewColor(for: UIColor(red: CGFloat(redColorSlider.value),
-                                          green: CGFloat(greenColorSlider.value),
-                                          blue: CGFloat(blueColorSlider.value),
-                                          alpha: 1))
+        delegate.setNewColor(for: currentColorView.backgroundColor ?? .white)
         dismiss(animated: true)
     }
     
@@ -114,6 +111,7 @@ class ColorSettingsViewController: UIViewController {
     }
     
     private func setKeyboardToolbar() {
+        let toolbar = UIToolbar()
         toolbar.sizeToFit()
         let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done,
                                          target: self,
